@@ -2,20 +2,15 @@ language: go
 go_import_path: github.com/ondrejit/glods
 
 go:
-  - 1.7.x
+  - 1.9.x
   - master
 
-before_install:
-  - sudo add-apt-repository ppa:masterminds/glide -y
-  - sudo apt-get update -q
-  - sudo apt-get install glide -y
-
 install:
-  - glide install
+  - go get
   - go build
 
 before_script:
-  - go vet $(glide novendor)
+  - go vet
 
 script:
   - go run ./main.go -d

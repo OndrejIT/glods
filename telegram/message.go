@@ -1,8 +1,8 @@
 package telegram
 
 import (
-	"gopkg.in/telegram-bot-api.v4"
-	log "github.com/Sirupsen/logrus"
+	tgbotapi "github.com/go-telegram-bot-api/telegram-bot-api/v5"
+	log "github.com/sirupsen/logrus"
 	conf "github.com/spf13/viper"
 )
 

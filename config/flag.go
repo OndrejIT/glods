@@ -8,7 +8,8 @@ import (
 func FlagParser() {
 	flag.StringP("path", "p", "/", "Set disk path. (\"/root,/srv\")")
 	flag.StringP("hostname", "n", "", "Set hostname.")
-	flag.IntP("warning", "w", 100, "Set warning limit. (in GB)")
+	flag.IntP("warning", "w", 100, "Set warning limit. (in GB or percent)")
+	flag.Bool("percent", false, "Set warning limit in percent mode.")
 	flag.StringP("token", "t", "", "Set telegram bot token.")
 	flag.Int64P("chat", "i", 0, "Set telegram chat ID.")
 	flag.StringP("config", "c", ".", "Set config path.")
@@ -23,6 +24,7 @@ func FlagParser() {
 func flagToConfig() {
 	conf.BindPFlag("hostname", flag.Lookup("hostname"))
 	conf.BindPFlag("warning", flag.Lookup("warning"))
+	conf.BindPFlag("percent", flag.Lookup("percent"))
 	conf.BindPFlag("token", flag.Lookup("token"))
 	conf.BindPFlag("chat", flag.Lookup("chat"))
 	conf.BindPFlag("path", flag.Lookup("path"))

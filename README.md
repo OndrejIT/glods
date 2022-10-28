@@ -2,10 +2,7 @@
 Work with [telegram](https://telegram.org/)!
 
 ### Install
-  - Install [glide](https://github.com/Masterminds/glide) (Package Management for Golang)
-  - glide install
-  
-  - or: go get ./... (not recommended)
+  - or: go get
 
 ### Run
  - go build

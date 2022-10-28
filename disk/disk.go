@@ -1,11 +1,12 @@
 package disk
 
 import (
-	"syscall"
 	"strings"
+	"syscall"
+
 	"github.com/ondrejit/glods/telegram"
+	log "github.com/sirupsen/logrus"
 	conf "github.com/spf13/viper"
-	log "github.com/Sirupsen/logrus"
 )
 
 type DiskStatus struct {
@@ -48,8 +49,9 @@ func Check() {
 			log.Fatalf("[Disk] %s", err)
 		}
 
+		percent := conf.GetBool("percent")
 		warning := conf.GetInt("warning")
-		if status.Free/GB < float64(warning) {
+		if (!percent && status.Free/GB < float64(warning)) || (percent && status.PercentFree < float64(warning)) {
 			telegram.Send(MsgFormater(path[p], status))
 		}
 	}

@@ -3,8 +3,9 @@ package disk
 import (
 	"fmt"
 	"os"
+
+	log "github.com/sirupsen/logrus"
 	conf "github.com/spf13/viper"
-	log "github.com/Sirupsen/logrus"
 )
 
 const (
