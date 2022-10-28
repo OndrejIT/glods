@@ -18,4 +18,5 @@ Work with [telegram](https://telegram.org/)!
   * -s, --silent            Set silent mode in terminal.
   * -t, --token string      Set telegram bot token.
   * -v, --verbose           Enable verbose mode.
-  * -w, --warning int       Set warning limit. (in GB) (default 100)
+  *     --percent           Set warning limit in percent mode.
+  * -w, --warning int       Set warning limit. (in GB or percent) (default 80)

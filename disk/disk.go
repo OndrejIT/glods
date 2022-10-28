@@ -46,7 +46,7 @@ func Check() {
 	for p := range path {
 		status, err := Status(path[p])
 		if err != nil {
-			log.Fatalf("[Disk] %s", err)
+			log.Errorf("[Disk] %s", err)
 		}
 
 		percent := conf.GetBool("percent")

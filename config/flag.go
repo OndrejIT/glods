@@ -8,7 +8,7 @@ import (
 func FlagParser() {
 	flag.StringP("path", "p", "/", "Set disk path. (\"/root,/srv\")")
 	flag.StringP("hostname", "n", "", "Set hostname.")
-	flag.IntP("warning", "w", 100, "Set warning limit. (in GB or percent)")
+	flag.IntP("warning", "w", 80, "Set warning limit. (in GB or percent)")
 	flag.Bool("percent", false, "Set warning limit in percent mode.")
 	flag.StringP("token", "t", "", "Set telegram bot token.")
 	flag.Int64P("chat", "i", 0, "Set telegram chat ID.")
